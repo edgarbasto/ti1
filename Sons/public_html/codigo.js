@@ -20,7 +20,7 @@ function Animal(square) {
     this.name = "";
     this.imgs = "";
     this.sounds = "";
-    this.imgLoc = "img" + square;
+    this.imgLoc = square;
     
     
     this.printPic = function(){
@@ -87,9 +87,9 @@ function init(){
     imgB = document.getElementById("imgB");
     imgC = document.getElementById("imgC");
     
-    squareA = new Animal("A");
-    squareB = new Animal("B");
-    squareC = new Animal("C");
+    squareA = new Animal(imgA);
+    squareB = new Animal(imgB);
+    squareC = new Animal(imgC);
 
     jogar();
 //    animal.randAnimal();

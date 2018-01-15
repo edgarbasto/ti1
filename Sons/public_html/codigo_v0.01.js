@@ -91,10 +91,10 @@ function init(){
     imgB = document.getElementById("imgB");
     imgC = document.getElementById("imgC");
 
-    animal.randAnimal();
-    console.log(animal.name);
-    console.log(animal.square);
-    console.log(animal.imgLoc);
+//    animal.randAnimal();
+//    console.log(animal.name);
+//    console.log(animal.square);
+//    console.log(animal.imgLoc);
 //    animal.printPic();
 }
 
