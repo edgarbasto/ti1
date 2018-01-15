@@ -1,0 +1,67 @@
+#container{
+    height: 800px;
+    width: 1024px;
+    background: black;      
+}
+
+.topRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.midRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.botRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+
+#txtTit{
+    height: 100px;
+    width: 450px;
+    background-color: lightcoral;
+}
+
+#txtPont{
+    height: 100px;
+    width: 150px;
+    background-color: red; 
+    
+}
+
+.top {
+    margin: 12px;
+    padding: 12px;
+}
+.mid{
+    height: 400px;
+    width: 30%;
+    padding: 12px;
+    margin: 12px;
+    background: lightblue;
+
+}
+
+.imgMid{
+    height: 200px;
+    width: 250px;
+    padding: 5px;
+    margin: 12px;
+    /*align-self: center;*/
+    
+}
+.bot{
+    height: 100px;
+    width: 150px;
+    background-color: red; 
+}
+

@@ -1,0 +1,22 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 5C6D-65B9
+
+ Directory of C:\Users\president\Documents\projs\Sons\public_html\imgs
+
+12-Jan-18  10:44 AM    <DIR>          .
+12-Jan-18  10:44 AM    <DIR>          ..
+12-Jan-18  10:44 AM                 0 animals.txt
+12-Jan-18  10:24 AM            71,552 cat.jpg
+12-Jan-18  10:25 AM            56,861 chicken.jpeg
+12-Jan-18  10:25 AM            84,170 cow.jpeg
+12-Jan-18  10:24 AM            47,930 dog.jpg
+12-Jan-18  10:26 AM            43,967 dolphin.jpeg
+12-Jan-18  10:26 AM           131,258 donkey.jpeg
+12-Jan-18  10:27 AM            80,198 duck.jpeg
+12-Jan-18  10:27 AM           122,636 elephant.jpeg
+12-Jan-18  10:27 AM            55,273 goat.jpeg
+12-Jan-18  10:27 AM           224,679 horse.jpeg
+12-Jan-18  10:28 AM            47,140 mosquito.jpeg
+12-Jan-18  10:29 AM            50,647 seagull.jpeg
+              13 File(s)      1,016,311 bytes
+               2 Dir(s)  185,991,213,056 bytes free
