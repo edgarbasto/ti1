@@ -26,6 +26,10 @@ function Animal(square) {
     this.printPic = function(){
         this.imgLoc.src = this.imgs;
     };
+    this.playSound = function() {
+        var audio = new Audio(this.sounds);
+        audio.play();
+    };
      
 };
 
@@ -75,7 +79,22 @@ function Animal(square) {
         squareA.randAnimal();
         squareB.randAnimal();
         squareC.randAnimal();
-     
+        
+        var squareInGame = Math.floor((Math.random() * 3)+1);
+        switch(squareInGame){
+            case 1:
+                correctAnswer = squareA;
+                break;
+            case 2:
+                correctAnswer = squareB;
+                break;
+            case 3:
+                correctAnswer = squareC;
+                break;
+                
+        }
+                
+             
     };
 
 function init(){
@@ -92,11 +111,16 @@ function init(){
     squareC = new Animal(imgC);
 
     jogar();
-//    animal.randAnimal();
-//    console.log(animal.name);
-//    console.log(animal.square);
-//    console.log(animal.imgLoc);
-//    animal.printPic();
+    document.addEventListener("mouseover"), function(){
+        
+        
+    };
+//    
+//    document.addEventListener("mouseover", function(evt){
+//        evt = (evt)?evt:window.event;
+//        alert("Caiu o " + evt.detail.modelo + " com " + evt.detail.totalpassageiros + " passageiros.");
+//    });
+
 }
 
 document.addEventListener("DOMContentLoaded", init());
