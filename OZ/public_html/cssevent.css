@@ -1,0 +1,21 @@
+#blue {
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    padding: 25px;
+}
+#red {
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    padding: 25px;
+}
+#yellow {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    padding: 25px;
+}

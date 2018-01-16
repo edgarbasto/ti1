@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="aeroporto.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <form>
+        <h1>Objetos</h1>
+            Modelo: <input type="text" id="txtmodelo" onchange="nave.setmodel(this.value);"/><br/><br/>
+            Passageiros: <input type="text" id="txtpassageiros"/><br/><br/>
+            Altura: <input type="text" id="txtaltura"/><br/><br/>
+            Velocidade: <input type="text" id="txtvelocidade"/><br/><br/>
+            <input type="button" value="subir" onclick="nave.sobidesce(100);"/>
+            <input type="button" value="descer" onclick="nave.sobidesce(-100);"/>
+            <input type="button" value="acelerar"/>
+            <input type="button" value="travar"/>
+        </form>
+        
+    </body>
+</html>

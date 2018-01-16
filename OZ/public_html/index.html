@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="codigo.js" type="text/javascript"></script>
+    
+    </head>
+    <body onload="inicia('Título'); verArray('bravo');">
+      
+        <form id="frm">
+            <h1 id="tit"></h1>
+            <input type="button" value="timer" onclick="xpto();"/>   
+            <hr/>
+            Escolher:
+            <select id="escolha" onchange="verArray(this.value);">
+                <option>alfa</option>
+                <option selected>bravo</option>
+               
+            </select> <br/><br/>
+            Valor do Array:<input type="text" id="txt1" name="txt1_1"/><br/><br/>
+            Introduza :<input type="text" id="txt2" name="txt2_2"/><br/><br/>
+            <input type="button" value="push" onclick="_push();"/>
+            
+        </form>    
+        
+    </body>
+</html>

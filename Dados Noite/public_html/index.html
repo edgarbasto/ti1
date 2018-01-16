@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img{
+                width: 100px;
+                height: 100px;
+            }
+            #msg{
+                display: block;
+                width: 200px;
+                height: 100px;
+                background-color: darkgreen;
+            }
+        </style>
+        <script src="jogo.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <form>
+            <h1>Jogo dos Dados</h1>
+            Jogador: <input type="text" id="txtjogador" /><br/><br/>
+            Montante: <input type="text" id="txtmontante" /><br/><br/>
+            <img src="1.png" alt="" id="dado1"/>
+            <img src="1.png" alt="" id="dado2"/>
+            <hr/>
+            <div id="msg"></div>
+            <input type="button" value="rolar" id="bt1"/>
+            
+        </form>
+    </body>
+</html>
