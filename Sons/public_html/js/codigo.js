@@ -7,7 +7,7 @@ var animals = ["cat", "chicken", "cow", "dog", "dolphin", "donkey", "duck", "ele
 
 function Animal(square) {
     this.randAnimal = function(){
-        var randomNum = Math.floor((Math.random() * 12)+1);
+        var randomNum = Math.floor((Math.random() * animals.length));
         this.name = animals[randomNum];
         this.imgs = "imgs/" + this.name + ".jpeg";
         this.sounds = "sounds/" + this.name +".wav";
@@ -21,16 +21,20 @@ function Animal(square) {
     this.imgs = "";
     this.sounds = "";
     this.imgLoc = square;
+    this.audio;
     
     
     this.printPic = function(){
         this.imgLoc.src = this.imgs;
     };
     this.playSound = function() {
-        var audio = new Audio(this.sounds);
-        audio.play();
+        this.audio = new Audio(this.sounds);
+        this.audio.play();
     };
-     
+    
+    this.stopSound = function() {
+        this.audio.stop();
+    };
 };
 
 
@@ -79,26 +83,50 @@ function Animal(square) {
         squareA.randAnimal();
         squareB.randAnimal();
         squareC.randAnimal();
+        $('.midEd').css("background", "white");
         
         var squareInGame = Math.floor((Math.random() * 3)+1);
+        var correctSquare;
         switch(squareInGame){
             case 1:
                 correctAnswer = squareA;
+                correctSquare = 'opA';
                 break;
             case 2:
                 correctAnswer = squareB;
+                correctSquare = 'opB';
                 break;
             case 3:
                 correctAnswer = squareC;
-                break;
-                
+                correctSquare = 'opC';
+                break;        
         }
-                
-             
+  
+        $('.midEd').mouseover(function(evt){
+            correctAnswer.playSound();
+            $(this).css("background", "lightgreen");
+            $(this).bind("mouseout", function(){
+                $(this).css("background", "white");
+                correctAnswer.audio.pause();
+            });
+        });
+        
+        $('.midEd').click(function(){
+            if( String((this).id) === correctSquare){   
+                $('.midEd').unbind('mouseover');
+                $('.midEd').unbind('mouseout');
+                $(this).css("background", "lightgreen");
+                $('.midEd').not(this).css("background", "#FFA3A3");
+                alert("Parabéns adivinhou.");
+            } else {
+                alert("Resposta errada, tente novamente.");
+            };
+         });          
     };
 
+
 function init(){
-    
+
     opA = document.getElementById("opA");
     opB = document.getElementById("opB");
     opC = document.getElementById("opC");
@@ -111,15 +139,13 @@ function init(){
     squareC = new Animal(imgC);
 
     jogar();
-    document.addEventListener("mouseover"), function(){
-        
-        
-    };
-//    
-//    document.addEventListener("mouseover", function(evt){
-//        evt = (evt)?evt:window.event;
-//        alert("Caiu o " + evt.detail.modelo + " com " + evt.detail.totalpassageiros + " passageiros.");
+    
+//    Elaborar este evento para criar novo jogo. Atenção que ele fica baralhado com os binds e unbinds.
+//    $('#butJogar').click(function(){
+//        jogar();
 //    });
+//
+
 
 }
 
