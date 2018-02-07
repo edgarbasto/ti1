@@ -2,26 +2,30 @@
 var opA, opB, opC;
 var imgA, imgB, imgC;
 var squareA, squareB, squareC;
-var animals = ["cat", "chicken", "cow", "dog", "dolphin", "donkey", "duck", "elephant", "goat", "horse", "mosquito", "seagull"];
+var pontos = 0;
+var animals = ["Gato", "Galinha", "Vaca", "Cão", "Golfinho", "Burro", "Pato", "Elefante", "Ovelha", "Cavalo", "Mosquito", "Gaivota"];
+var sons = ["O Gato mia.", "A Galinha cacareja.", "A Vaca muge.", "O Cão ladra.", "O Golfinho emite um som sob a forma de clique ou estalido.", "O Burro zurra.", "O Pato grasna.", "O Elefante barre.", "A Ovelha bale.", "O Cavalo relincha.", "O Mosquito zumbe.", "A Gaivota grasna ou pipila."];
 
 
 function Animal(square) {
     this.randAnimal = function(){
         var randomNum = Math.floor((Math.random() * animals.length));
         this.name = animals[randomNum];
+        this.desc = sons[randomNum];
         this.imgs = "imgs/" + this.name + ".jpeg";
         this.sounds = "sounds/" + this.name +".wav";
         animals.splice(randomNum,1);
-//        this.randSquare();
+        sons.splice(randomNum,1);
         this.printPic();
         
     };
      
     this.name = "";
+    this.desc = "";
     this.imgs = "";
     this.sounds = "";
     this.imgLoc = square;
-    this.audio;
+    this.audio;   
     
     
     this.printPic = function(){
@@ -38,52 +42,21 @@ function Animal(square) {
 };
 
 
-
-//var animal = {
-//    randAnimal: function(){
-//        var randomNum = Math.floor((Math.random() * 12)+1);
-//        this.name = animals[randomNum];
-//        this.imgs = "imgs/" + this.name + ".jpeg";
-//        this.sounds = "sounds/" + this.name +".wav";
-//        this.randSquare();
-//        this.printPic();
-//    },
-//    randSquare: function(){
-//        var randomNum = Math.floor((Math.random() * 3)+1);
-//        switch(randomNum){
-//            case 1:
-//                this.square = opA;
-//                this.imgLoc = imgA;
-//                break;
-//            case 2:
-//                this.square = opB;
-//                this.imgLoc = imgB;
-//                break;
-//            case 3:
-//                this.square = opC;
-//                this.imgLoc = imgC;
-//                break;
-//        }
-//    },
-//    
-//    name: "",
-//    imgs: "",
-//    sounds: "",
-//    square: "",
-//    imgLoc: "",
-//    
-//    
-//    printPic: function(){
-//        this.imgLoc.src = this.imgs;
-//    }
-//     
-//};
-
  function jogar(){
         squareA.randAnimal();
         squareB.randAnimal();
         squareC.randAnimal();
-        $('.midEd').css("background", "white");
+        $('.midEd').css("background", "#DFDCE3");
+       
+        $('#titA').text(squareA.name);
+        $('#titB').text(squareB.name);
+        $('#titC').text(squareC.name);
+        $('#txtA').text("");
+        $('#txtB').text("");
+        $('#txtC').text("");
+        
+        animals = ["Gato", "Galinha", "Vaca", "Cão", "Golfinho", "Burro", "Pato", "Elefante", "Ovelha", "Cavalo", "Mosquito", "Gaivota"];
+        sons = ["O Gato mia.", "A Galinha cacareja.", "A Vaca muge.", "O Cão ladra.", "O Golfinho emite um som sob a forma de clique ou estalido.", "O Burro zurra.", "O Pato grasna.", "O Elefante barre.", "A Ovelha bale.", "O Cavalo relincha.", "O Mosquito zumbe.", "A Gaivota grasna ou pipila."];
         
         var squareInGame = Math.floor((Math.random() * 3)+1);
         var correctSquare;
@@ -104,19 +77,25 @@ function Animal(square) {
   
         $('.midEd').mouseover(function(evt){
             correctAnswer.playSound();
-            $(this).css("background", "lightgreen");
+            $(this).css("background", "#4ABDAC");
             $(this).bind("mouseout", function(){
-                $(this).css("background", "white");
+                $(this).css("background", "#DFDCE3");
                 correctAnswer.audio.pause();
             });
         });
         
-        $('.midEd').click(function(){
+        $('.midEd').click(function(evt){
             if( String((this).id) === correctSquare){   
                 $('.midEd').unbind('mouseover');
                 $('.midEd').unbind('mouseout');
-                $(this).css("background", "lightgreen");
-                $('.midEd').not(this).css("background", "#FFA3A3");
+                $('.midEd').unbind('click');
+                $(this).css("background", "#4ABDAC");
+                $('.midEd').not(this).css("background", "#FC4A1A");
+                $('#txtA').append(squareA.desc);
+                $('#txtB').append(squareB.desc);
+                $('#txtC').append(squareC.desc);
+                pontos += 1;
+                $('#pontos').text("Pontos: " + pontos);
                 alert("Parabéns adivinhou.");
             } else {
                 alert("Resposta errada, tente novamente.");
@@ -140,12 +119,6 @@ function init(){
 
     jogar();
     
-//    Elaborar este evento para criar novo jogo. Atenção que ele fica baralhado com os binds e unbinds.
-//    $('#butJogar').click(function(){
-//        jogar();
-//    });
-//
-
 
 }
 

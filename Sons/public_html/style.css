@@ -1,12 +1,12 @@
 
-
+/*
 .topRow{
     display: flex;
     flex-direction: row;
     justify-content: center;
     
-}
-.midRow{
+}*/
+/*.midRow{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,50 +18,49 @@
     flex-direction: row;
     justify-content: center;
     
-}
+}*/
 
 
-#txtTit{
+/*#txtTit{
     height: 100px;
     width: 450px;
     background-color: lightcoral;
-}
+}*/
 
-#txtPont{
+/*#txtPont{
     height: 100px;
     width: 150px;
     background-color: red; 
     
-}
-
+}*/
+/*
 .topEd {
-    margin: 12px;
-    padding: 12px;
-}
+ 
+}*/
+
 .midEd{
     height: 400px;
     width: 30%;
     padding: 12px;
     margin: 12px;
-    background: lightblue;
-
+ 
 }
 
-.imgMid{
+/*.imgMid{
     height: 200px;
     width: 250px;
     padding: 5px;
     margin: 12px;
-    /*align-self: center;*/
+    align-self: center;
     
-}
-.botEd{
+}*/
+/*.botEd{
     height: 100px;
     width: 150px;
     background-color: red; 
-}
+}*/
 
-/*botstrap classes*/
+/*bootsnip example*/
 
 .wrapper {
   position: absolute;
