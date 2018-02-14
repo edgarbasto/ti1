@@ -43,6 +43,10 @@ function Animal(square) {
 
 
  function jogar(){
+        $('.midEd').unbind('mouseover');
+        $('.midEd').unbind('mouseout');
+        $('.midEd').unbind('click');
+        
         squareA.randAnimal();
         squareB.randAnimal();
         squareC.randAnimal();
@@ -89,6 +93,7 @@ function Animal(square) {
                 $('.midEd').unbind('mouseover');
                 $('.midEd').unbind('mouseout');
                 $('.midEd').unbind('click');
+                correctAnswer.audio.pause();
                 $(this).css("background", "#4ABDAC");
                 $('.midEd').not(this).css("background", "#FC4A1A");
                 $('#txtA').append(squareA.desc);
